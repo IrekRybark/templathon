@@ -1,0 +1,26 @@
+[Input]
+datafile = sqlorders.csv
+
+[Output]
+seqnum = 158
+outputfilenameformat = orders{0:02}.sql
+
+[InputFieldTypes]
+seq = str
+bill_to_num = str
+ship_to_num = str
+
+[Directories]
+input = ./input
+output = ./output
+templates = ./templates
+
+[Templates]
+test_setup_template = test_setup.sql
+test_teardown_template = 
+template_suffixes = _1,_2,_3
+template_parts = template_header,template_note,template_line
+
+[GlobalTags]
+app_window_title = 
+
