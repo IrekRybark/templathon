@@ -1,2 +1,2 @@
 # templathon
-Template based data generating Python scrip
+Template based data generating Python script
