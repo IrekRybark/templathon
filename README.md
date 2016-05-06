@@ -96,6 +96,8 @@ insert into order_header values ('A16X001235', @order_date, 'BT02345', 'SH03333'
 insert into order_note values ('A16X001235', 'Test case: 102')
 -- insert line
 insert into order_line values ('123456', 1, 1, 100)
+
+commit transaction
 ```
 Note: since the input data did not have second line template name, only one line insert statement is generated
 
