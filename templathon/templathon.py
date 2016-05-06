@@ -93,7 +93,7 @@ class GenOuptut:
         """
 
         for line in out_file:
-            if self.conf.tag_delimiter in out_file:
+            if self.cfg.tag_delimiter in out_file:
                 raise ValueError("Tag delimiter found in the output file. Line: ", line)
 
 
