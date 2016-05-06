@@ -7,6 +7,7 @@ The data items are currently in form of rows of .csv file.
 Templates contain special tags, which are replaced with values from .csv file columns.
 
 ## Quick start
+See examples/sqlorders directory for actual files.
 
 ### Task
 Given task is described as follows:
