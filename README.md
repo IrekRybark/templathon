@@ -41,23 +41,39 @@ SQL insert expressions are dynamically built by replacing tags with actual value
 Inserting order header data:
 
 ```
+<<<<<<< HEAD
 -- insert header  
 select @order_date = getdate()    
 insert into order_header values (@##order_num##, ##bill_to_num##, ##ship_to_num##, @order_date, ##shipping_method##
+=======
+-- inser header
+select @order_date = getdate()
+insert into order_header values ('##order_num##', @order_date, '##bill_to_num##', '##ship_to_num##', '##shipping_method##')
+>>>>>>> origin/master
 ```
 
 In addition, templates for order note 
 
 ```
+<<<<<<< HEAD
 -- insert order note  
 insert into order_note values (##order_num##, "Test case: ##seq##")
+=======
+-- Insert order note
+insert into order_note values ('##order_num##', 'Test case: ##seq##')
+>>>>>>> origin/master
 ```
 
 and row insertion can be used
 
 ```
+<<<<<<< HEAD
 -- insert line  
 insert into order_line values (##item_num##, ##line_num##, ##item_qty##, ##price##)
+=======
+-- insert line
+insert into order_line values ('##item_num##', ##line_num##, ##item_qty##, ##price##)
+>>>>>>> origin/master
 ```
 
 ### Input data
@@ -72,30 +88,39 @@ Note: in the example above, the data is not showing line #2 template so only one
 ### Outupt
 
 ```
+-- select database
+user salesdb
+
+declare
+    @order_date datetime
+
+start transaction
 ---------------------------
 -- Test case: 101
 ---------------------------
 -- Insert order header
 select @order_date = getdate()
-insert into order_header values (@A16X001234, BT01234, SH02222, @order_date, FeExOvNt
+insert into order_header values ('A16X001234', @order_date, 'BT01234', 'SH02222', 'FeExOvNt')
 -- Insert order note
-insert into order_note values (A16X001234, "Test case: 101")
+insert into order_note values ('A16X001234', 'Test case: 101')
 -- insert line
-insert into order_line values (123456, 1, 1, 100)
+insert into order_line values ('123456', 1, 1, 100)
 
 -- insert line
-insert into order_line values (234567.0, 2, 2.0, 74.0)
+insert into order_line values ('234567', 2, 2.0, 74.0)
 
 ---------------------------
 -- Test case: 102
 ---------------------------
 -- Insert order header
 select @order_date = getdate()
-insert into order_header values (@A16X001235, BT02345, SH03333, @order_date, FeExOvNt
+insert into order_header values ('A16X001235', @order_date, 'BT02345', 'SH03333', 'FeExOvNt')
 -- Insert order note
-insert into order_note values (A16X001235, "Test case: 102")
+insert into order_note values ('A16X001235', 'Test case: 102')
 -- insert line
-insert into order_line values (123456, 1, 1, 100)
+insert into order_line values ('123456', 1, 1, 100)
+
+commit transaction
 ```
 
 Note: since the input data did not have second line template name, only one line insert statement is generated
