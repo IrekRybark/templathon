@@ -5,6 +5,7 @@ Unit: case_generator
 Unit implements merging template files with values
 """
 
+
 class CaseValues:
     """
     The class encapsulates all the test case values in dictionary
@@ -26,7 +27,7 @@ class CaseGenerator:
     The class encapsulate a single test case generation functionality
     """
 
-    def __init__(self, cfg, test_case_vals, seq):
+    def __init__(self, cfg):
         self.cfg = cfg
 
     def get_fld_suffix(self, fld):
@@ -83,4 +84,3 @@ class CaseGenerator:
                     line = self.merge_line_values(line, vals, template_suffix)
                     part_lines.append(line)
         return part_lines
-

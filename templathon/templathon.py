@@ -11,6 +11,8 @@ import os
 from config import Config
 from case_generator import CaseGenerator, CaseValues
 
+__version__ = "0.1.0"
+
 class GenOuptut:
     """
     Script generates a file based on list of test cases (csv) and part templates.
@@ -96,7 +98,6 @@ class GenOuptut:
             if self.cfg.tag_delimiter in out_file:
                 raise ValueError("Tag delimiter found in the output file. Line: ", line)
 
-
     def process_test_cases(self):
         seq = self.inc_config_seq()
 
@@ -156,5 +157,4 @@ def main():
     gen.process_test_cases()
 
 if __name__ == "__main__":
-    # execute only if run as a script
     main()

@@ -8,6 +8,7 @@ Also, provides general access to the configuration, like incrementing counters
 
 import configparser
 
+
 class Config:
 
     def __init__(self, config_file_name):
@@ -50,15 +51,14 @@ class Config:
 
         self.test_setup_file = config['Templates']['test_setup_template']
         self.test_teardown_file = config['Templates']['test_teardown_template']
-        self.suffixes = config['Templates']['template_suffixes'].split(",") # [_1,_2,_3]
+        self.suffixes = config['Templates']['template_suffixes'].split(",")  # [_1,_2,_3]
         # the order of template parts reflects sequence of merging them
-        self.template_parts = config['Templates']['template_parts'].split(",") # template_header,template_detail,template_finalization
+        self.template_parts = config['Templates']['template_parts'].split(",")  # template_header,template_detail...
         self.tag_delimiter = config['Templates'].get('tag_delimiter', '##')
 
         self.global_tags = {}
         for tag in config['GlobalTags']:
             self.global_tags[tag] = config['GlobalTags'][tag]
-
 
     def set_config_seq(self, seq):
         """
