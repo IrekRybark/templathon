@@ -119,3 +119,15 @@ commit transaction
 ## Configuration
 Data generation job is stored in .config file.
 
+## Similar work
+
+### Text::Merge
+General purpose text/data merging methods in Perl.
+
+http://search.cpan.org/~sharris/Text-Merge-0.36/
+
+### Mailchimp
+Mail mergee
+
+http://kb.mailchimp.com/templates/
+
