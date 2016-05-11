@@ -8,7 +8,7 @@ The program can be used to generate variety of data.  Primarily was develop for 
 - GUI automation (like AutoIt) scripts
 
 ## How it works
-The script generates text data based on a list of data items and templates.
+The script generates text data based on a list of data items and templates.  In principle, it is very similar to mail-merge.
 The data items are currently in form of rows of .csv file.
 Templates contain special tags, which are replaced with values from .csv file fields.
 
