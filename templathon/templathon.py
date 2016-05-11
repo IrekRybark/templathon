@@ -15,7 +15,7 @@ __version__ = "0.1.0"
 
 class GenOuptut:
     """
-    Script generates a file based on list of test cases (csv) and part templates.
+    Class generates a file based on list of test cases (.csv) and part templates.
 
     The templates consist of header template and detail templates.
     Template may have number of placeholders in a form of ##placeholder_name##, which are replaced using
@@ -25,6 +25,7 @@ class GenOuptut:
     def __init__(self, test_case_file):
         """
         Constructor
+        
         :param test_case_file: file name with the test cases
         :return: nothing
         """
@@ -38,12 +39,15 @@ class GenOuptut:
         self.template_parts = self.cfg.template_parts
 
     def inc_config_seq(self):
+        """ Increment sequential number and save in the configuration
+        """
         self.cfg.out_seq_num += 1
         self.cfg.set_config_seq(self.cfg.out_seq_num)
         return self.cfg.out_seq_num
 
     def proc_test_case(self, test_case, test_case_val, out_dir=''):
         """ Concatenate all templates and merge values into a single file
+        
         :param test_case:
         :param test_case_val:
         :param out_dir: directory to store individual PO files
@@ -86,19 +90,23 @@ class GenOuptut:
 
         return trans_lines_num
 
-    def verify_output(self, out_file):
+    def verify_output(self, out_file_lines):
         """
         Make sure that there are no not-replaced tags.  Look for tag delimiters
-        :param out_file:
+        
+        :param out_file_lines: list of output file lines to be verified
         :return: noting
         :raises: ValueError
         """
-
-        for line in out_file:
+        for line in out_file_lines:
             if self.cfg.tag_delimiter in out_file:
                 raise ValueError("Tag delimiter found in the output file. Line: ", line)
 
     def process_test_cases(self):
+        """ Process all the test cases one by one
+
+        :return: noting
+        """
         seq = self.inc_config_seq()
 
         # read the control dataset

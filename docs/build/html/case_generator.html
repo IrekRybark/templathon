@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>case_generator module &mdash; templathon 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="templathon 0.1 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">templathon 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-case_generator">
+<span id="case-generator-module"></span><h1>case_generator module<a class="headerlink" href="#module-case_generator" title="Permalink to this headline">¶</a></h1>
+<p>Package: templathon
+Unit: case_generator</p>
+<p>Unit implements merging template files with values</p>
+<dl class="class">
+<dt id="case_generator.CaseGenerator">
+<em class="property">class </em><tt class="descclassname">case_generator.</tt><tt class="descname">CaseGenerator</tt><big>(</big><em>cfg</em><big>)</big><a class="headerlink" href="#case_generator.CaseGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.object</span></tt></p>
+<p>The class encapsulate a single test case generation functionality</p>
+<dl class="method">
+<dt id="case_generator.CaseGenerator.get_fld_suffix">
+<tt class="descname">get_fld_suffix</tt><big>(</big><em>fld</em><big>)</big><a class="headerlink" href="#case_generator.CaseGenerator.get_fld_suffix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get field suffix by checking against list of suffixes
+:param fld: field name</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="case_generator.CaseGenerator.merge_line_values">
+<tt class="descname">merge_line_values</tt><big>(</big><em>line</em>, <em>values</em>, <em>suffix=''</em><big>)</big><a class="headerlink" href="#case_generator.CaseGenerator.merge_line_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge field values into the line
+If suffix provided, try to match suffixed fields.
+:param line: template line with placeholders to be substituted
+:param values: dictionary of field values
+:param suffix: current suffix to be considered (can be empty)
+:return: line with substituted placeholders</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="case_generator.CaseGenerator.merge_template_values">
+<tt class="descname">merge_template_values</tt><big>(</big><em>template_input</em>, <em>template_suffix</em>, <em>vals</em><big>)</big><a class="headerlink" href="#case_generator.CaseGenerator.merge_template_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge values into a single template
+:param template_input: template part (header, line, etc.) file
+:param template_suffix: suffix corresponding to template part
+:param vals:
+:return:</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="case_generator.CaseValues">
+<em class="property">class </em><tt class="descclassname">case_generator.</tt><tt class="descname">CaseValues</tt><big>(</big><em>row</em>, <em>cols</em><big>)</big><a class="headerlink" href="#case_generator.CaseValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">builtins.object</span></tt></p>
+<p>The class encapsulates all the test case values in dictionary</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/case_generator.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">templathon 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2016, Irek Rybark.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+    </div>
+  </body>
+</html>

@@ -1,24 +1,27 @@
 # templathon
-Template-based data generating Python script.
+Template-based text generating Python script.
 
-## Purpose
+## 1. Purpose
 The program can be used to generate variety of data.  Primarily was develop for supporting application testing by creating:
 - SQL scripts
 - EDI data
 - GUI automation (like AutoIt) scripts
 
-## How it works
-The script generates text data based on a list of data items and templates.
+## 2. Objective
+The objective was to create very simple to use text merging tool utilizing flat data.
+
+## 3. How it works
+The script generates text data based on templates and a list of data items.
 The data items are currently in form of rows of .csv file.
 Templates contain special tags, which are replaced with values from .csv file fields.
 
-## Example
+## 4. Example
 See examples/sqlorders directory for actual files.
 
-### Task
+### 4.1 Task
 Generate number of orders in a sales database using SQL.
 
-### Order data
+### 4.2 Order data
 Order data consists of the following fields:  
 
 ```
@@ -43,8 +46,8 @@ A16X001235,BT02345,SH03333,FeExOvNt,123456,1,100,,,
 A16X001236,BT02345,SH03333,FeExOvNt,123333,2,50,,,
 ```
 
-### SQL expression templates
-SQL insert expressions are dynamically built by replacing tags with actual values.  The tags are just .csv file column names enclosed in delimters (##).
+### 4.3 SQL expression templates
+SQL expressions are dynamically built by replacing tags with actual values.  The tags are just .csv file column names enclosed in delimters (##).
 
 Inserting order header data:
 
@@ -68,26 +71,30 @@ insert into order_note values ('##order_num##', 'Test case: ##seq##')
 insert into order_line values ('##item_num##', ##line_num##, ##item_qty##, ##price##)
 ```
 
-### Input data
+### 4.4 Input data
 In addition to field values, the input data contains template names (Like ord_100_header.sql, ord_200_note.sql etc.).
+
 ```
 seq,template_header,template_note,template_line_1,template_line_2,order_num,bill_to_num ...
 101,ord_100_header.sql,ord_200_note.sql,ord_300_line.sql,ord_300_line.sql,A16X001234,BT01234 ...
 102,ord_100_header.sql,ord_200_note.sql,ord_300_line.sql,,A16X001235,BT02345 ...
 ```
+
 Note: in the example above, for order A16X001235 the data row is not showing line #2 template (template_line_2), so only one line insert statement will be generated.
 
-### Outupt
+### 4.5 Outupt
 Generated output is a valid SQL script ready for execution.
 
 ```
--- select database
-user salesdb
+-- select database  
 
-declare
-    @order_date datetime
+user salesdb  
 
-start transaction
+declare  
+    @order_date datetime  
+
+start transaction  
+
 ---------------------------
 -- Test case: 101
 ---------------------------
@@ -98,7 +105,6 @@ insert into order_header values ('A16X001234', @order_date, 'BT01234', 'SH02222'
 insert into order_note values ('A16X001234', 'Test case: 101')
 -- insert line
 insert into order_line values ('123456', 1, 1, 100)
-
 -- insert line
 insert into order_line values ('234567', 2, 2.0, 74.0)
 
@@ -116,17 +122,17 @@ insert into order_line values ('123456', 1, 1, 100)
 commit transaction
 ```
 
-## Configuration
+## 5. Configuration
 Data generation job is stored in .config file.
 
-## Similar work
+## 6. Similar work
 
-### Text::Merge
+### 6.1 Text::Merge
 General purpose text/data merging methods in Perl.
 
 http://search.cpan.org/~sharris/Text-Merge-0.36/
 
-### Mailchimp
+### 6.2 Mailchimp
 Mail mergee
 
 http://kb.mailchimp.com/templates/

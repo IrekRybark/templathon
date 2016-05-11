@@ -33,7 +33,8 @@ class Config:
         self.global_tags = {}
 
     def get_config(self):
-        """ Retrieve configuration """
+        """ Retrieve configuration 
+        """
         config = configparser.ConfigParser()
         config.read(self.config_file_name)
 
@@ -61,8 +62,8 @@ class Config:
             self.global_tags[tag] = config['GlobalTags'][tag]
 
     def set_config_seq(self, seq):
-        """
-        Save value of sequential number in the configuration
+        """ Save value of sequential number in the configuration
+        
         :param seq: new value for sequential number
         :return: nothing
         """

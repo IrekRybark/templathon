@@ -1,2 +1,7 @@
 # pyCharm
 .idea/
+docs/doctrees
+templathon/__pycache__
+
+*.bak
+*.pyc
