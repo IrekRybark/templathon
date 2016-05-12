@@ -1,6 +1,7 @@
 # pyCharm
 .idea/
-docs/doctrees
+./docs/doctrees
+./docs/build
 templathon/__pycache__
 
 *.bak
