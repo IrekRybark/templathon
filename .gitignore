@@ -1,8 +1,10 @@
 # pyCharm
 .idea/
 
+dist/
 docs/build/
 templathon/__pycache__
+templathon.egg-info/
 
 *.bak
 *.pyc

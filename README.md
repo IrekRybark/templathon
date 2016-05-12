@@ -2,7 +2,7 @@
 Template-based text generating Python script.
 
 ## 1. Purpose
-The program can be used to generate variety of data.  Primarily was develop for supporting application testing by creating:
+The program can be used to generate a variety of data.  Primarily was developed for supporting application testing by creating:
 - SQL scripts
 - EDI data
 - GUI automation (like AutoIt) scripts

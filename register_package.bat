@@ -1,0 +1,1 @@
+twine register -r testpypi --config-file .pypirc dist/templathon-0.1.0.zip
