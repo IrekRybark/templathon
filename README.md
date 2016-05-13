@@ -1,5 +1,5 @@
 # templathon
-Template-based text generating Python script.
+Naïve template-based text generating Python script.
 
 ## 1. Purpose
 The program can be used to generate a variety of data.  Primarily was developed for supporting application testing by creating:
@@ -130,12 +130,16 @@ Data generation job is stored in .config file.
 
 ## 6. Similar work
 
-### 6.1 Text::Merge
+### 6.1 Templating in Python
+
+https://wiki.python.org/moin/Templating
+
+### 6.2 Text::Merge
 General purpose text/data merging methods in Perl.
 
 http://search.cpan.org/~sharris/Text-Merge-0.36/
 
-### 6.2 Mailchimp
+### 6.3 Mailchimp
 Mail mergee
 
 http://kb.mailchimp.com/templates/
